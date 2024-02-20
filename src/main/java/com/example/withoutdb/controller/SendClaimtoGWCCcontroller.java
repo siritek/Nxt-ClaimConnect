@@ -22,7 +22,7 @@ import java.sql.ResultSet;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin
+//@CrossOrigin
 public class SendClaimtoGWCCcontroller {
 
     @PostMapping("/generateClaimFile")

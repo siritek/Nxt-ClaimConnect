@@ -4,7 +4,7 @@ import com.example.withoutdb.model.DropdownModifier;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
+//@CrossOrigin
 @RequestMapping("/modifyDropdown")
 public class DropdownModifiercontroller {
 

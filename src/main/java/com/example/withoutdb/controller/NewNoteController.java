@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 
-@CrossOrigin(origins = {"http://localhost:3000", "https://gfnurnjftf.us-east-1.awsapprunner.com"})
+//@CrossOrigin(origins = {"http://localhost:3000", "https://gfnurnjftf.us-east-1.awsapprunner.com"})
 @RestController
 @RequestMapping("/newnotefirst")
 

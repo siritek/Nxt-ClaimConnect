@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/newdocumentfirst")
-@CrossOrigin
+//@CrossOrigin
 public class NewDocumentController {
 
 

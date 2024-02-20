@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
-@CrossOrigin
+//@CrossOrigin
 @RequestMapping("/common")
 public class CommonController {
 
