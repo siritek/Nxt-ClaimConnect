@@ -11,7 +11,7 @@ public class DBConn {
         Connection conn = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nxtbase_db?enabledTLSProtocolsenabledTLSProtocols=TLSv1.2", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/nxtbase_db?useSSL=false&allowPublicKeyRetrieval=true&autoReconnect=true&failOverReadOnly=false&maxReconnects=10", "root", "root");
         }
         catch(Exception ex)
         {
