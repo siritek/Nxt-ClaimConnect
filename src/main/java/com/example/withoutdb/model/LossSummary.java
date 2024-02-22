@@ -163,4 +163,21 @@ public class LossSummary {
     public void setTimeOfLoss(String timeOfLoss) {
         this.timeOfLoss = timeOfLoss;
     }
+
+    private String OtherDescription;
+    public String getOtherDescription() {
+return OtherDescription;
+    }
+    private String TypeofLoss;
+    public String getTypeofLoss() {
+        return TypeofLoss;
+    }
+    private String Countries;
+    public String getCountries() {
+        return Countries;
+    }
+    private String Zipcode;
+    public String getZipcode() {
+        return Zipcode;
+    }
 }

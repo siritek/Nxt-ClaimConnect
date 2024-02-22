@@ -74,6 +74,7 @@ public class Fnol {
     private String reportedBy;
     private String dateOfReport;
 
+
     public String getDateOfLoss() {
         return dateOfLoss;
     }
@@ -121,4 +122,6 @@ public class Fnol {
     public void setPolicyNumber(String policyNumber) {
         this.policyNumber = policyNumber;
     }
+
+
 }
