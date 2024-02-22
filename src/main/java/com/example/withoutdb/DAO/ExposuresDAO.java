@@ -125,7 +125,7 @@ public class ExposuresDAO {
             }
             rs3.close();
 
-            PreparedStatement ps4 = connection.prepareStatement("SELECT ExposuresStatus_Value FROM exposure_status");
+            PreparedStatement ps4 = connection.prepareStatement("SELECT ExposuresStatus_Value FROM exposuresstatus");
             ResultSet rs4 = ps4.executeQuery();
             while (rs4.next()) {
                 String exposureStatus = rs4.getString("ExposuresStatus_Value");
