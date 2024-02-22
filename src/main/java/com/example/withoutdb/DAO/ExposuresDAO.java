@@ -35,12 +35,12 @@ public class ExposuresDAO {
 // get claimant types from claimanttype table
             Connection connection = DBConn.getMyConnection();
             System.out.println("Connection reached prepareStatement in exposuresDAO");
-            PreparedStatement ps = connection.prepareStatement("SELECT id, type FROM claimanttype");
+            PreparedStatement ps = connection.prepareStatement("SELECT id, ClaimantType_Value FROM claimanttype");
             ResultSet rs = ps.executeQuery();
 
 
             while (rs.next()) {
-                String claimantType = rs.getString("type");
+                String claimantType = rs.getString("ClaimantType_Value");
                 claimanttypes.add(claimantType);
             }
             rs.close();
@@ -83,7 +83,7 @@ public class ExposuresDAO {
             }
             rs5.close();
            // List<String> states;
-            typemaps.put("state", states);
+            typemaps.put("State", states);
 
 
             //get relatedto values from relatedto table
@@ -98,11 +98,11 @@ public class ExposuresDAO {
 
 
             //get loss parties from lossparty table
-            PreparedStatement ps1 = connection.prepareStatement("SELECT id, type FROM lossparty");
+            PreparedStatement ps1 = connection.prepareStatement("SELECT id, LossParty_Value FROM lossparty");
             ResultSet rs1 = ps1.executeQuery();
 
             while (rs1.next()) {
-                String lossParty = rs1.getString("type");
+                String lossParty = rs1.getString("LossParty_Value");
                 lossparties.add(lossParty);
             }
             rs1.close();
@@ -125,25 +125,26 @@ public class ExposuresDAO {
             }
             rs3.close();
 
-            PreparedStatement ps4 = connection.prepareStatement("SELECT exposure_status_value FROM exposure_status");
+            PreparedStatement ps4 = connection.prepareStatement("SELECT ExposuresStatus_Value FROM exposure_status");
             ResultSet rs4 = ps4.executeQuery();
             while (rs4.next()) {
-                String exposureStatus = rs4.getString("exposure_status_value");
+                String exposureStatus = rs4.getString("ExposuresStatus_Value");
                 ExposureStatus.add(exposureStatus);
             }
             rs4.close();
             typemaps.put("exposureStatus", ExposureStatus);
 
             //get assignedto values from assignedto table
-            List<String> assignedToValues = new ArrayList<>();
-            PreparedStatement ps13 = connection.prepareStatement("SELECT value FROM assignedto");
-            ResultSet rs13 = ps13.executeQuery();
-            while (rs13.next()) {
-                String assignedToValue = rs13.getString("value");
-                assignedToValues.add(assignedToValue);
-            }
-            rs13.close();
-            typemaps.put("assignedto", assignedToValues);
+            // code unused and table assignedto has not been created
+//            List<String> assignedToValues = new ArrayList<>();
+//            PreparedStatement ps13 = connection.prepareStatement("SELECT value FROM assignedto");
+//            ResultSet rs13 = ps13.executeQuery();
+//            while (rs13.next()) {
+//                String assignedToValue = rs13.getString("value");
+//                assignedToValues.add(assignedToValue);
+//            }
+//            rs13.close();
+//            typemaps.put("assignedto", assignedToValues);
 
 
             typemaps.put("claimantType",claimanttypes);
