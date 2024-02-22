@@ -132,7 +132,7 @@ public class ExposuresDAO {
                 ExposureStatus.add(exposureStatus);
             }
             rs4.close();
-            typemaps.put("exposureStatus", ExposureStatus);
+            //typemaps.put("exposureStatus", ExposureStatus);
 
             //get assignedto values from assignedto table
             // code unused and table assignedto has not been created
