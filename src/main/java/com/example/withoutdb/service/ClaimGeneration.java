@@ -51,7 +51,7 @@ public class ClaimGeneration {
             con.setAutoCommit(false);
 
             // Prepare the update statement
-            PreparedStatement ps = con.prepareStatement("UPDATE NXT_Master SET ClaimNumber = ? WHERE PolicyNumber = ?");
+            PreparedStatement ps = con.prepareStatement("UPDATE nxt_master SET ClaimNumber = ? WHERE PolicyNumber = ?");
             ps.setString(1, nextClaimNumber);
             ps.setString(2, policyNumber);
 

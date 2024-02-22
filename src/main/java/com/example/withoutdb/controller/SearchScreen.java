@@ -52,7 +52,7 @@ public class SearchScreen {
 
 
     private PreparedStatement prepareStatement(SearchData searchData, Connection conn) throws SQLException {
-        String query = "SELECT ClaimNumber, Name, PolicyNumber, Claimant, DateofLoss, Adjuster, PolicyStatus FROM NXT_Master WHERE 1 = 1";
+        String query = "SELECT ClaimNumber, Name, PolicyNumber, Claimant, DateofLoss, Adjuster, PolicyStatus FROM nxt_master WHERE 1 = 1";
 
         if (searchData.getClaimNumber() != null && !searchData.getClaimNumber().isEmpty()) {
             query += " AND ClaimNumber = ? ";

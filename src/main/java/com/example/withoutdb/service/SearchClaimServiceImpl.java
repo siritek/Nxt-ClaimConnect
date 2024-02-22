@@ -22,7 +22,7 @@ public class SearchClaimServiceImpl implements SearchClaimService {
     public void saveSearchClaim(SearchClaim NXT_Master) {
         try {
             Connection con = DBConn.getMyConnection();
-            PreparedStatement ps = con.prepareStatement("INSERT INTO NXT_Master (ClaimNumber ,policyNumber, SearchFor, FirstName,LastName, OrganizationName, TaxID,Insured, Claimant, LossDate, Adjuster, Status, RemainingReserves, FuturePayments, Paid)" +
+            PreparedStatement ps = con.prepareStatement("INSERT INTO nxt_master (ClaimNumber ,policyNumber, SearchFor, FirstName,LastName, OrganizationName, TaxID,Insured, Claimant, LossDate, Adjuster, Status, RemainingReserves, FuturePayments, Paid)" +
                     " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?)");
             System.out.println( NXT_Master.getClaimNumber() + " " + NXT_Master.getPolicyNumber() + " " + NXT_Master.getSearchFor() +" " + NXT_Master.getFirstName()  + " " + NXT_Master.getLastName() +  " " + NXT_Master.getOrganizationName() +" " + NXT_Master.getTaxID() );
             ps.setString(1, NXT_Master.getClaimNumber());
@@ -57,7 +57,7 @@ public class SearchClaimServiceImpl implements SearchClaimService {
         List<SearchClaim> allsearchclaims = new ArrayList<SearchClaim>();
         try {
             Connection con = DBConn.getMyConnection();
-            PreparedStatement ps = con.prepareStatement("select * from NXT_Master");
+            PreparedStatement ps = con.prepareStatement("select * from nxt_master");
             ResultSet rs = ps.executeQuery();
             SearchClaim x = null;
             while(rs.next())
