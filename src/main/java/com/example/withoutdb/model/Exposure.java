@@ -11,9 +11,9 @@ public class Exposure {
     private String creationDate;
     private String claimant;
     private String claimantType;
-    private String ExposuresStatus;
-    private String Phone;
-    private String ExposureAddress;
+//    private String ExposuresStatus;
+//    private String Phone;
+//    private String ExposureAddress;
 
 
     //private String address;
@@ -77,17 +77,17 @@ public class Exposure {
         this.claimantType = claimantType;
     }
 
-    public String getExposuresStatus() {
-        return ExposuresStatus;
-    }
-
-    public String getPhone() {
-        return Phone;
-    }
-
-    public String getExposureAddress() {
-        return ExposureAddress;
-    }
+//    public String getExposuresStatus() {
+//        return ExposuresStatus;
+//    }
+//
+//    public String getPhone() {
+//        return Phone;
+//    }
+//
+//    public String getExposureAddress() {
+//        return ExposureAddress;
+//    }
 }
 
 //    public String getAddress() {

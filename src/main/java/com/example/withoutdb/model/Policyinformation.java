@@ -120,20 +120,20 @@ public class Policyinformation {
         this.address = address;
     }
 
-    private String PolicyVerified;
-    private String UnderwritingCompany;
-    private String OriginalEffectiveDate;
-    public String getPolicyVerified() {
-        return PolicyVerified;
-    }
-
-    public String getUnderwritingCompany() {
-        return UnderwritingCompany;
-    }
-
-    public String getOriginalEffectiveDate() {
-        return OriginalEffectiveDate;
-    }
+//    private String PolicyVerified;
+//    private String UnderwritingCompany;
+//    private String OriginalEffectiveDate;
+//    public String getPolicyVerified() {
+//        return PolicyVerified;
+//    }
+//
+//    public String getUnderwritingCompany() {
+//        return UnderwritingCompany;
+//    }
+//
+//    public String getOriginalEffectiveDate() {
+//        return OriginalEffectiveDate;
+//    }
 }
 
 
