@@ -32,7 +32,7 @@ public class ClaimSynopsisController {
 
         try (Connection conn = dbConn.getMyConnection();
              PreparedStatement statement = conn.prepareStatement(
-                     "SELECT ClaimNumber, PolicyNumber, NAME, DateofLoss, Adjuster, DateReported, LossLocation, LossDescription, TimeofLoss, ReportedBy, PolicyType, EffectiveDate, ExpirationDate, CancellationDate, LossCause, TypeofLoss, Address,City, State, Countries, Zipcode, Lossparty, PrimaryCoverage, ExposuresStatus FROM NXT_Master WHERE ClaimNumber = ?"
+                     "SELECT ClaimNumber, PolicyNumber, NAME, DateofLoss, Adjuster, DateReported, LossLocation, LossDescription, TimeofLoss, ReportedBy, PolicyType, EffectiveDate, ExpirationDate, CancellationDate, LossCause, TypeofLoss, Address,City, State, Countries, Zipcode, Lossparty, PrimaryCoverage, ExposuresStatus FROM nxt_master WHERE ClaimNumber = ?"
              )) {
             statement.setString(1, claimNumber);
             //    statement.setString(2, policyNumber);
