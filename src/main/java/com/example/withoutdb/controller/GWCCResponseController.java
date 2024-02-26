@@ -26,11 +26,7 @@ public class GWCCResponseController {
 
         return "New GWCCResponse info is added";
 }
-    @GetMapping("/getAll")
-    public List<GWCCResponse> getAllsearchclaims() {
 
-            return GWCCResponseService.getAllGWCCresponses();
-    }
 }
 
 

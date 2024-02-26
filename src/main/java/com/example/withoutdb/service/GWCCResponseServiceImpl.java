@@ -16,7 +16,7 @@ public class GWCCResponseServiceImpl implements GWCCResponseService {
 
         try {
             Connection con = DBConn.getMyConnection();
-            PreparedStatement ps = con.prepareStatement("INSERT INTO GWCCResponsetable (BasepolicyNumber,BaseClaimNumber, GWCCClaimnumber ,response,createdDate,other) VALUES (?, ?, ?,?,?,?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO gwccresponsetable (BasepolicyNumber,BaseClaimNumber, GWCCClaimnumber ,other,createdDate,response) VALUES (?, ?, ?,?,?,?)");
 
             ps.setString(1, gwccResponse.getBasePolicyNumber());
             ps.setString(2, gwccResponse.getBaseClaimNumber());
@@ -42,7 +42,7 @@ public class GWCCResponseServiceImpl implements GWCCResponseService {
             List<GWCCResponse> allresponses = new ArrayList<GWCCResponse>();
             try {
                 Connection con = DBConn.getMyConnection();
-                PreparedStatement ps = con.prepareStatement("select * from GWCCResponsetable");
+                PreparedStatement ps = con.prepareStatement("select * from gwccresponsetable");
                 ResultSet rs = ps.executeQuery();
                 GWCCResponse x = null;
                 while(rs.next())
