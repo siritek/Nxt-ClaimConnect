@@ -29,12 +29,12 @@ public class ConfirmationHistoryController {
                 while(rs.next())
                 {
                     x = new ConfirmationHistory();
-                    x.setGwClaimnumber(rs.getString(1));
+                    x.setBasePolicyNumber(rs.getString(1));
                     x.setBaseClaimNumber(rs.getString(2));
-                    x.setBasePolicyNumber(rs.getString(3));
-                    x.setResponse(rs.getString(4));
-                    x.setCreatedDate(rs.getString(5));
-                    x.setOther(rs.getString(6));
+                    x.setGwClaimnumber(rs.getString(3));
+                    x.setCreatedDate(rs.getString(4));
+                    x.setOther(rs.getString(5));
+                    x.setResponse(rs.getString(6));
                     allresponses.add(x);
                 }
                 con.close();
