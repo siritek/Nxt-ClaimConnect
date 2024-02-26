@@ -39,7 +39,8 @@ public class SendClaimtoGWCCcontroller {
             String claimNumber = claimPayload.getClaimNumber();
             String jsonPayload = getPaylodforCCintegration(policyNumber, claimNumber);
             System.out.println("claim number is " + claimNumber);
-            String basePath = "C:\\TestClaim\\";
+            String basePath = "s3://nxtcc/upload/";
+            //String basePath = "C:\\TestClaim\\";
             String fileName = CreateClaimFileGWCC.createUniqueClaimFile(basePath);
             CreateClaimFileGWCC.writeJsonToFile(jsonPayload, basePath, fileName);
 
