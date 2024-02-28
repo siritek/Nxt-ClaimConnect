@@ -113,7 +113,7 @@ public class SendClaimtoGWCCcontroller {
                 payload.setLossDate(rs.getString("DateOfLoss"));
                 payload.setName(rs.getString("Name"));
                 payload.setAddress(rs.getString("Address"));
-                payload.setBasePolicyNumber("5566112234");
+                payload.setBasePolicyNumber("PolicyNumber");
                 payload.setLossDescription(rs.getString("LossDescription"));
                 payload.setPolicyType("MutualRequest_Ext");
                 payload.setTypeOfLoss("GL");
