@@ -29,12 +29,12 @@ public class ConfirmationHistoryController {
                 while(rs.next())
                 {
                     x = new ConfirmationHistory();
-                    x.setBasePolicyNumber(rs.getString(1));
-                    x.setBaseClaimNumber(rs.getString(2));
-                    x.setGwClaimnumber(rs.getString(3));
-                    x.setCreatedDate(rs.getString(4));
-                    x.setOther(rs.getString(5));
-                    x.setResponse(rs.getString(6));
+                    x.setBasePolicyNumber(rs.getString("BasePolicyNumber"));
+                    x.setBaseClaimNumber(rs.getString("BaseClaimNumber"));
+                    x.setGwClaimnumber(rs.getString("GWCCClaimnumber"));
+                    x.setCreatedDate(rs.getString("createdDate"));
+                    x.setOther(rs.getString("other"));
+                    x.setResponse(rs.getString("response"));
                     allresponses.add(x);
                 }
                 con.close();
@@ -42,13 +42,7 @@ public class ConfirmationHistoryController {
             catch(SQLException e) {
                 System.out.println("Exception in get ConfirmationHistory  method "+ e);
             }
-        // Print out the contents of allresponses
-        for (ConfirmationHistory response : allresponses) {
-            System.out.println(response); // Assuming ConfirmationHistory has a toString() method implemented
-        }
             return allresponses;
-
-
         }
     }
 
