@@ -105,7 +105,7 @@ public class SendClaimtoGWCCcontroller {
 
             while (rs.next()) {
                 payload.setBaseClaimNumber(rs.getString("ClaimNumber"));
-                payload.setPolicyNumber(rs.getString("PolicyNumber"));
+                payload.setBasePolicyNumber(rs.getString("PolicyNumber"));
                 payload.setLossDate(rs.getString("dateOfLoss"));
                 payload.setLossLocation(rs.getString("LossLocation"));
                 payload.setReportedBy(rs.getString("ReportedBy"));
@@ -113,7 +113,7 @@ public class SendClaimtoGWCCcontroller {
                 payload.setLossDate(rs.getString("DateOfLoss"));
                 payload.setName(rs.getString("Name"));
                 payload.setAddress(rs.getString("Address"));
-                payload.setBasePolicyNumber("PolicyNumber");
+                //payload.setBasePolicyNumber("PolicyNumber");
                 payload.setLossDescription(rs.getString("LossDescription"));
                 payload.setPolicyType("MutualRequest_Ext");
                 payload.setTypeOfLoss("GL");
