@@ -1,7 +1,6 @@
 package com.example.withoutdb.controller;
 
 import com.example.withoutdb.model.ConfirmationHistory;
-import com.example.withoutdb.model.GWCCResponse;
 import com.example.withoutdb.service.DBConn;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,10 +30,10 @@ public class ConfirmationHistoryController {
                     x = new ConfirmationHistory();
                     x.setBasePolicyNumber(rs.getString("BasePolicyNumber"));
                     x.setBaseClaimNumber(rs.getString("BaseClaimNumber"));
-                    x.setGwClaimnumber(rs.getString("GWCCClaimnumber"));
-                    x.setCreatedDate(rs.getString("createdDate"));
-                    x.setOther(rs.getString("other"));
-                    x.setResponse(rs.getString("response"));
+                    x.setGwclaimNumber(rs.getString("GWCCClaimnumber"));
+                    x.setCreateDateTime(rs.getString("createdDate"));
+                    //x.setOther(rs.getString("other"));
+                    x.setStatus(rs.getString("response"));
                     allresponses.add(x);
                 }
                 con.close();

@@ -7,7 +7,38 @@ public class ConfirmationHistory {
     private String gwClaimnumber;
     private String other;
     private String createdDate;
+    private String createDateTime;
+    private String gwclaimNumber;
+    private String status;
 
+    public void setCreateDateTime(String createDateTime) {
+        this.createDateTime = createDateTime;
+    }
+
+    // Getter for createDateTime
+    public String getCreateDateTime() {
+        return createDateTime;
+    }
+
+    // Setter for gwclaimNumber
+    public void setGwclaimNumber(String gwclaimNumber) {
+        this.gwclaimNumber = gwclaimNumber;
+    }
+
+    // Getter for gwclaimNumber
+    public String getGwclaimNumber() {
+        return gwclaimNumber;
+    }
+
+    // Setter for status
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    // Getter for status
+    public String getStatus() {
+        return status;
+    }
 
     public String getResponse() {
         return response;
