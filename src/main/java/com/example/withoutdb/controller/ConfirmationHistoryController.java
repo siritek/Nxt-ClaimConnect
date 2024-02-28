@@ -42,7 +42,10 @@ public class ConfirmationHistoryController {
             catch(SQLException e) {
                 System.out.println("Exception in get ConfirmationHistory  method "+ e);
             }
+            System.out.println("allresponses");
             return allresponses;
+
+
         }
     }
 
