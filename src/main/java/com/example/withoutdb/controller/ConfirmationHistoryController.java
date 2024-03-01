@@ -28,7 +28,6 @@ public class ConfirmationHistoryController {
                 while(rs.next())
                 {
                     x = new ConfirmationHistory();
-                    //just a comment
                     x.setBasePolicyNumber(rs.getString("BasePolicyNumber"));
                     x.setBaseClaimNumber(rs.getString("BaseClaimNumber"));
                     x.setGwclaimNumber(rs.getString("GWCCClaimnumber"));
