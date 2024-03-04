@@ -91,6 +91,7 @@ public class SendClaimtoGWCCcontroller {
         CCClaimPayload payload;
         Fnol fnoldata;
 
+
         try {
             Connection con = DBConn.getMyConnection();
 
