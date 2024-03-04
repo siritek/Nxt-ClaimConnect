@@ -90,6 +90,7 @@ public class SendClaimtoGWCCcontroller {
     private String getPaylodforCCintegration(String policyNumber, String claimNumber) {
         CCClaimPayload payload;
         Fnol fnoldata;
+        //test
 
         try {
             Connection con = DBConn.getMyConnection();
