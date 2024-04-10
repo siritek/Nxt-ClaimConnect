@@ -36,6 +36,7 @@ public class GWCCResponseServiceImpl implements GWCCResponseService {
             throw new RuntimeException(e);
         }
         return true;
+        //just for branch test
     }
         @Override
     public List<GWCCResponse> getAllGWCCresponses() {
