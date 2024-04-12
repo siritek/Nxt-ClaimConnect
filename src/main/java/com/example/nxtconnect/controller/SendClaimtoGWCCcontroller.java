@@ -135,6 +135,11 @@ public class SendClaimtoGWCCcontroller {
                 payload.setEffectiveDate(rs.getString("EffectiveDate"));
                 payload.setCancellationDate(rs.getString("CancellationDate"));
                 payload.setExpirationDate(rs.getString("ExpirationDate"));
+                payload.setOrganisationName("NXT Connect");
+                payload.setOrganisationCity("Charlotte");
+                payload.setOrganisationState("NC");
+                payload.setOrganisationPostalCode("28210");
+
                 System.out.println("this if payload inserted " + payload.toString());
             }
 

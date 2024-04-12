@@ -25,7 +25,7 @@ public class BasicInformationDAO {
         try {
             Connection con = DBConn.getMyConnection();
             System.out.println("Connection reached prepareStatement in policetypeDAO");
-            PreparedStatement ps = con.prepareStatement("SELECT PolicyType_Value FROM policytype");
+            PreparedStatement ps = con.prepareStatement("SELECT PolicyType_Value FROM policytype  ORDER BY id");
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -36,7 +36,7 @@ public class BasicInformationDAO {
             //Status,
 
 
-                PreparedStatement ps1 = con.prepareStatement("SELECT PolicyStatus_Value FROM policystatus");
+                PreparedStatement ps1 = con.prepareStatement("SELECT PolicyStatus_Value FROM policystatus  ORDER BY id");
                 ResultSet rs1 = ps1.executeQuery();
 
                 while (rs1.next()) {

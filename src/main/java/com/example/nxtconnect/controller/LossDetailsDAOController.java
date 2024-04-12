@@ -19,7 +19,7 @@ public class LossDetailsDAOController {
     }
     @GetMapping
     public Map<String, List<String>> getLossDetails () {
-        System.out.println("Connection reached LossCauseDAOController getLossCauses method\n");
+        System.out.println("Connection reached LossDetailsDAOController, getLossCauses method\n");
         return lossDetailsDAO.getLossDetails();
     }
 }

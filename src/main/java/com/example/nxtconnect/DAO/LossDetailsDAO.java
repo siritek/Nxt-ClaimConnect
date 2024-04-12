@@ -34,18 +34,19 @@ public class LossDetailsDAO {
                 lossCauses.add(lossCause);
             }
             rs.close();
-            //Type of Loss,Relationship to Insured,
+            System.out.println("lossCauses: " + lossCauses);  // Print lossCauses
 
-            PreparedStatement ps1 = con.prepareStatement("SELECT TypeofLoss_Value FROM typeofloss");
+            PreparedStatement ps1 = con.prepareStatement("SELECT TypeofLoss_Value FROM typeofloss ORDER BY id");
             ResultSet rs1 = ps1.executeQuery();
 
             while (rs1.next()) {
-                String typeOfLosses = rs1.getString("TypeofLoss_Value");
-                typeOflosses.add(typeOfLosses);
+                String typeOfLoss = rs1.getString("TypeofLoss_Value");
+                typeOflosses.add(typeOfLoss);
             }
             rs1.close();
+            System.out.println("typeOfLosses: " + typeOflosses);  // Print typeOfLosses
 
-            PreparedStatement ps2 = con.prepareStatement("SELECT RelationshipToInsured_Value FROM relationshiptoinsured");
+            PreparedStatement ps2 = con.prepareStatement("SELECT RelationshipToInsured_Value FROM relationshiptoinsured ORDER BY id");
             ResultSet rs2 = ps2.executeQuery();
 
             while (rs2.next()) {
@@ -54,7 +55,7 @@ public class LossDetailsDAO {
             }
             rs2.close();
 
-            PreparedStatement ps3 = con.prepareStatement("SELECT Adjuster_Value FROM adjuster");
+            PreparedStatement ps3 = con.prepareStatement("SELECT Adjuster_Value FROM adjuster ORDER BY id");
             ResultSet rs3 = ps3.executeQuery();
             while (rs3.next()) {
                 String adjuster = rs3.getString("Adjuster_Value");

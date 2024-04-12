@@ -26,6 +26,43 @@ public class CCClaimPayload {
     private String State;
     private String ReportedBy;
 
+    public String getOrganisationName() {
+        return OrganisationName;
+    }
+
+    public void setOrganisationName(String organisationName) {
+        OrganisationName = organisationName;
+    }
+
+    private String OrganisationName;
+
+    public String getOrganisationCity() {
+        return OrganisationCity;
+    }
+
+    public void setOrganisationCity(String organisationCity) {
+        OrganisationCity = organisationCity;
+    }
+
+    public String getOrganisationState() {
+        return OrganisationState;
+    }
+
+    public void setOrganisationState(String organisationState) {
+        OrganisationState = organisationState;
+    }
+
+    public String getOrganisationPostalCode() {
+        return OrganisationPostalCode;
+    }
+
+    public void setOrganisationPostalCode(String organisationPostalCode) {
+        OrganisationPostalCode = organisationPostalCode;
+    }
+
+    private String OrganisationCity;
+    private String OrganisationState;
+    private String OrganisationPostalCode;
     private String LossParty;
 
     private String CreationDate;
