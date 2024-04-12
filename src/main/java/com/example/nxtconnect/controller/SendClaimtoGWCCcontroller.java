@@ -30,60 +30,60 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 public class SendClaimtoGWCCcontroller {
 
    //  Uncomment for AWS connectivity
-   // @PostMapping("/generateClaimFile")
-//    public String generateClaimFile(@RequestBody CCClaimPayload claimPayload, HttpServletResponse response) throws IOException {
-//        System.out.println("inside generateClaimFile");
-//        if (claimPayload == null) {
-//            System.out.println("claimPayload is null");
-//            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-//            return "null values are not allowed";
-//        } else {
-//            String policyNumber = claimPayload.getPolicyNumber();
-//            String claimNumber = claimPayload.getClaimNumber();
-//            String jsonPayload = getPaylodforCCintegration(policyNumber, claimNumber);
-//            System.out.println("claim number is " + claimNumber);
-//
-//            // Construct S3 bucket name and object key
-//            String bucketName = "nxtcc";
-//            String basePath = "upload/"; // Specify the path within the bucket
-//
-//            // Combine basePath and fileName to get the S3 object key
-//            String fileName = CreateClaimFileGWCC.createUniqueClaimFile(basePath);
-//            String objectKey = basePath + fileName;
-//
-//            // Create an instance of the AmazonS3 client
-//            AmazonS3 s3Client = AmazonS3ClientBuilder.defaultClient();
-//
-//            // Write the JSON payload to S3
-//            ObjectMetadata metadata = new ObjectMetadata();
-//            metadata.setContentType("application/json");
-//            metadata.setContentLength(jsonPayload.length());
-//            s3Client.putObject(new PutObjectRequest(bucketName, objectKey, new ByteArrayInputStream(jsonPayload.getBytes()), metadata));
-//
-//            return "CC payload generated to the file: " + fileName + " with this payload " + jsonPayload;
-//        }
-//    }
-
- // Uncomment for local connectivity
     @PostMapping("/generateClaimFile")
     public String generateClaimFile(@RequestBody CCClaimPayload claimPayload, HttpServletResponse response) throws IOException {
         System.out.println("inside generateClaimFile");
         if (claimPayload == null) {
             System.out.println("claimPayload is null");
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            return "null vaules are not allowed";
+            return "null values are not allowed";
         } else {
             String policyNumber = claimPayload.getPolicyNumber();
             String claimNumber = claimPayload.getClaimNumber();
             String jsonPayload = getPaylodforCCintegration(policyNumber, claimNumber);
             System.out.println("claim number is " + claimNumber);
-            String basePath = "C:\\TestClaim\\";
+
+            // Construct S3 bucket name and object key
+            String bucketName = "nxtcc";
+            String basePath = "upload/"; // Specify the path within the bucket
+
+            // Combine basePath and fileName to get the S3 object key
             String fileName = CreateClaimFileGWCC.createUniqueClaimFile(basePath);
-            CreateClaimFileGWCC.writeJsonToFile(jsonPayload, basePath, fileName);
+            String objectKey = basePath + fileName;
+
+            // Create an instance of the AmazonS3 client
+            AmazonS3 s3Client = AmazonS3ClientBuilder.defaultClient();
+
+            // Write the JSON payload to S3
+            ObjectMetadata metadata = new ObjectMetadata();
+            metadata.setContentType("application/json");
+            metadata.setContentLength(jsonPayload.length());
+            s3Client.putObject(new PutObjectRequest(bucketName, objectKey, new ByteArrayInputStream(jsonPayload.getBytes()), metadata));
 
             return "CC payload generated to the file: " + fileName + " with this payload " + jsonPayload;
         }
     }
+
+ // Uncomment for local connectivity
+//    @PostMapping("/generateClaimFile")
+//    public String generateClaimFile(@RequestBody CCClaimPayload claimPayload, HttpServletResponse response) throws IOException {
+//        System.out.println("inside generateClaimFile");
+//        if (claimPayload == null) {
+//            System.out.println("claimPayload is null");
+//            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+//            return "null vaules are not allowed";
+//        } else {
+//            String policyNumber = claimPayload.getPolicyNumber();
+//            String claimNumber = claimPayload.getClaimNumber();
+//            String jsonPayload = getPaylodforCCintegration(policyNumber, claimNumber);
+//            System.out.println("claim number is " + claimNumber);
+//            String basePath = "C:\\TestClaim\\";
+//            String fileName = CreateClaimFileGWCC.createUniqueClaimFile(basePath);
+//            CreateClaimFileGWCC.writeJsonToFile(jsonPayload, basePath, fileName);
+//
+//            return "CC payload generated to the file: " + fileName + " with this payload " + jsonPayload;
+//        }
+//    }
 
     private DBConn dbConn;
 
